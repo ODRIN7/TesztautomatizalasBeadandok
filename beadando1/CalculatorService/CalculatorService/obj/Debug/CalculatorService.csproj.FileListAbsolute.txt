@@ -1,0 +1,9 @@
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\bin\Debug\CalculatorService.exe.config
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\bin\Debug\CalculatorService.exe
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\bin\Debug\CalculatorService.pdb
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\obj\Debug\CalculatorService.csprojResolveAssemblyReference.cache
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\obj\Debug\CalculatorService.exe
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\obj\Debug\CalculatorService.pdb
+C:\Users\DANIEL\Desktop\akt\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\bin\Debug\CalculatorService.exe.config
+C:\Users\DANIEL\Desktop\akt\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\obj\Debug\CalculatorService.exe
+C:\Users\DANIEL\Desktop\akt\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorService\obj\Debug\CalculatorService.pdb

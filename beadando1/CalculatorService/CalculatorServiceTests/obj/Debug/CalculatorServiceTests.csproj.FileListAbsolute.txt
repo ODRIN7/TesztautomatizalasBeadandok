@@ -1,0 +1,16 @@
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\obj\Debug\CalculatorServiceTests.csprojResolveAssemblyReference.cache
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\CalculatorServiceTests.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\CalculatorServiceTests.pdb
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\CalculatorService.exe
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\nunit.framework.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\CalculatorService.pdb
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\nunit.framework.xml
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\obj\Debug\CalculatorServiceTests.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\obj\Debug\CalculatorServiceTests.pdb
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Mono.Cecil.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\nunit.engine.api.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\nunit.engine.dll
+C:\Users\DANIEL\Desktop\tesztautomat_EPAM\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\NUnit3.TestAdapter.dll
