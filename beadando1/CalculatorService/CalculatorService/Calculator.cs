@@ -8,7 +8,7 @@ namespace CalculatorService
 {
   public  class Calculator
     {
-        private static char[] delimiterChars = { ';', ' ', ',', '.', ':', '\t', '\n','?' };
+        private static char[] delimiterChars = { ';', ' ', ',', '.', ':', '\t', '\n','?','/' };
         public int add(String numbers)
         {
             List<int> parseredNumbers = new List<int>();
@@ -25,7 +25,11 @@ namespace CalculatorService
             List<int> resultOFNumber = new List<int>();
             for (int i = 0; i < words.Length; i++)
             {
-                int result = NumberParsing(words[i]);
+                int result=0;
+                if (words[i] != "")
+                {
+                    result = NumberParsing(words[i]);
+                }                
                 validateNegative(result);                
                 resultOFNumber.Add(result);
                 
