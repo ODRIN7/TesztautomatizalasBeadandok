@@ -30,3 +30,7 @@ C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\b
 C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando1\CalculatorService\CalculatorServiceTests\obj\Debug\CalculatorServiceTests.csprojResolveAssemblyReference.cache
 C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando1\CalculatorService\CalculatorServiceTests\obj\Debug\CalculatorServiceTests.dll
 C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando1\CalculatorService\CalculatorServiceTests\obj\Debug\CalculatorServiceTests.pdb
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Castle.Core.dll
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Moq.dll
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Castle.Core.xml
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando1\CalculatorService\CalculatorServiceTests\bin\Debug\Moq.xml

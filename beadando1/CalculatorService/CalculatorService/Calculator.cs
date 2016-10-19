@@ -8,6 +8,16 @@ namespace CalculatorService
 {
   public  class Calculator
     {
+        Filesaver filesaver;
+        public Calculator(Filesaver filesaver)
+        {
+            this.filesaver = filesaver;
+        }
+         public Calculator()
+        {
+
+        }
+
         private static char[] delimiterChars = { ';', ' ', ',', '.', ':', '\t', '\n','?','/' };
         public int add(String numbers)
         {

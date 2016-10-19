@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XMLREADER
 {
-    class EboTestCase
+    public class EboTestCase
     {
         private string test_caseID;
 

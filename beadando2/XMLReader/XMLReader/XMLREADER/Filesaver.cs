@@ -8,23 +8,33 @@ using System.Windows.Forms;
 
 namespace XMLREADER
 {
-   public  class Filesaver : IFilesaver
+   public  class Filesaver 
     {
+        XDocument xDoc;
+        public XDocument XDoc
+        {
+            get { return this.xDoc; }
+            set { this.xDoc = value; }
+        }
+        string filename;
+        public virtual void setFilename(string filename)
+        {
+            this.filename=filename;
+        }
         public Filesaver()
         {
-            
+            xDoc = new XDocument();
         }
-        public void saveXdoc(XDocument xDoc,string fileName )
+
+        public virtual void saveXdoc(string filename)
         {
-            //    FolderBrowserDialog folderbrowser = new FolderBrowserDialog();
-            //      folderbrowser.ShowDialog();
-            //   xDoc.Save(folderbrowser.SelectedPath+"/"+ folderbrowser.Site);           
-            xDoc.Save(fileName+".xml");
+            xDoc.Save(filename);
         }
         public XDocument loadXdoc(string filename )
         {
             return XDocument.Load(filename);
         }
+
 
     }
 }

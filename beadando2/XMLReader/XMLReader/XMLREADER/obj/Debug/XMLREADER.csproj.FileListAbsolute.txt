@@ -21,3 +21,9 @@ C:\Users\DANIEL\Desktop\akt\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadan
 C:\Users\DANIEL\Desktop\akt\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\obj\Debug\XMLREADER.csprojResolveAssemblyReference.cache
 C:\Users\DANIEL\Desktop\akt\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\bin\Debug\XMLREADER.exe
 C:\Users\DANIEL\Desktop\akt\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\bin\Debug\XMLREADER.pdb
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\bin\Debug\XMLREADER.exe.config
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\obj\Debug\XMLREADER.exe
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\obj\Debug\XMLREADER.pdb
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\bin\Debug\XMLREADER.exe
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\bin\Debug\XMLREADER.pdb
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando2\XMLReader\XMLReader\XMLREADER\obj\Debug\XMLREADER.csprojResolveAssemblyReference.cache

@@ -1,6 +1,7 @@
 ﻿using System;
 using CalculatorService;
 using NUnit.Framework;
+using Moq;
 
 namespace CalculatorServiceTests
 {
@@ -67,6 +68,17 @@ namespace CalculatorServiceTests
             var calc = new Calculator();
             int result = calc.add("1//.,..,??/?...??//;\n;2");
             Assert.AreEqual(3, result);
+        }
+
+
+
+        [Test]
+        public void TestEboFileSaved()
+        {           
+            Mock<Filesaver> fileSaverMocker = new Mock<Filesaver>();
+            fileSaverMocker
+              .Setup(fsm => fsm.writetoTxt());
+
         }
     }
 }

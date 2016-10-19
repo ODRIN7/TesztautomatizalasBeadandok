@@ -9,21 +9,37 @@ namespace XMLREADER
 {
    public  class EboXMLReader : IOEboXMLReader
     {
-        private IFilesaver filesaver;
+        private Filesaver filesaver;
         private static List<EboTest> eboTests;
         public string filename;
-        public EboXMLReader(IFilesaver filesaver)
+
+        public EboXMLReader(Filesaver filesaver)
         {
             eboTests = new List<EboTest>();
             this.filesaver = filesaver;
+
         }      
        
-        public  void CreateToXML(string filename)
+        public  void CreateToXMLFailedTests(string filename)
         {
             LoadEboTestcase(filesaver.loadXdoc(filename));
             this.filename = filename;
-            CreateXMLPARSER();
+            CreateXMLPARSERFailedTests();
           
+        }
+        public void CreateToXMLPassedTests(string filename)
+        {
+            LoadEboTestcase(filesaver.loadXdoc(filename));
+            this.filename = filename;
+            CreateXMLPARSERPassedTests();
+
+        }
+        public void CreateToXMLByIdTests(string filename,string workId)
+        {
+            LoadEboTestcase(filesaver.loadXdoc(filename));
+            this.filename = filename;
+            CreateXMLPARSERByIdTests(workId);
+
         }
         private List<EboTest> LoadEboTestcase(XDocument xDoc)
         {
@@ -53,7 +69,7 @@ namespace XMLREADER
             }
             return eboTests;
         }
-        private void CreateXMLPARSER()
+        private void CreateXMLPARSERFailedTests()
         {
         XDocument xDoc = new XDocument();
         XElement sub = new XElement("subit_result");
@@ -80,11 +96,88 @@ namespace XMLREADER
             if (isFailed)
             {
                 sub.Add(testsuit);
+                isFailed = false;
             }
             }
 
             xDoc.Add(sub);
-            filesaver.saveXdoc(xDoc, "_result"+filename);
+            filesaver.XDoc = xDoc;
+            filesaver.setFilename("result" + filename);
+            filesaver.saveXdoc();
         }
+        private void CreateXMLPARSERPassedTests()
+        {
+            XDocument xDoc = new XDocument();
+            XElement sub = new XElement("subit_result");
+            foreach (var currEboTest in eboTests)
+            {
+                XElement testsuit = new XElement("test_suite");
+                testsuit.Add(new XAttribute("id", currEboTest.Test_suiteID));
+                bool passed = false;
+                foreach (var currEboTestCase in currEboTest.EboTestCases)
+                {
+
+                    XElement testcase = new XElement("test_case");
+                    testcase.Add(new XAttribute("id", currEboTestCase.Test_caseID));
+                    testcase.Add(new XElement("date", currEboTestCase.Date));
+                    testcase.Add(new XElement("passed", currEboTestCase.Passed));
+                    testcase.Add(new XElement("comment", new XCData(currEboTestCase.Comment)));
+                    if (currEboTestCase.Passed == "true")
+                    {
+                        passed = true;
+                        testsuit.Add(testcase);
+                    }
+
+                }
+                if (passed)
+                {
+                    sub.Add(testsuit);
+                    passed = false;
+                }
+            }
+
+            xDoc.Add(sub);
+            filesaver.XDoc = xDoc;
+            filesaver.setFilename("result" + filename);
+            filesaver.saveXdoc();
+        }
+        private void CreateXMLPARSERByIdTests(string id)
+        {
+            XDocument xDoc = new XDocument();
+            XElement sub = new XElement("subit_result");
+            foreach (var currEboTest in eboTests)
+            {
+                XElement testsuit = new XElement("test_suite");
+                testsuit.Add(new XAttribute("id", currEboTest.Test_suiteID));
+                bool isgoodId = false;
+                foreach (var currEboTestCase in currEboTest.EboTestCases)
+                {
+
+                    XElement testcase = new XElement("test_case");
+                    testcase.Add(new XAttribute("id", currEboTestCase.Test_caseID));
+                    testcase.Add(new XElement("date", currEboTestCase.Date));
+                    testcase.Add(new XElement("passed", currEboTestCase.Passed));
+                    testcase.Add(new XElement("comment", new XCData(currEboTestCase.Comment)));
+                    if (currEboTestCase.Test_caseID == id)
+                    {
+                        isgoodId = true;
+                        testsuit.Add(testcase);
+                    }
+
+                }
+                if (isgoodId)
+                {
+                    sub.Add(testsuit);
+                    isgoodId = false;
+                }
+            }
+
+            xDoc.Add(sub);
+            filesaver.XDoc = xDoc;
+            filesaver.setFilename("result" + filename);
+            filesaver.saveXdoc();
+        }
+
+
     }
 }
