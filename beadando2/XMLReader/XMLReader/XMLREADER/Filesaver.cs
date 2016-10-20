@@ -5,36 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Windows.Forms;
+using System.IO;
 
 namespace XMLREADER
 {
-   public  class Filesaver 
+   public  class Filesaver :IFilesaver
     {
-        XDocument xDoc;
-        public XDocument XDoc
-        {
-            get { return this.xDoc; }
-            set { this.xDoc = value; }
-        }
-        string filename;
-        public virtual void setFilename(string filename)
-        {
-            this.filename=filename;
-        }
         public Filesaver()
         {
-            xDoc = new XDocument();
         }
 
-        public virtual void saveXdoc(string filename)
+           
+        public void saveXdoc(XDocument xDoc, string fileUri, string fileName)
         {
-            xDoc.Save(filename);
+            xDoc.Save(Path.Combine(fileUri, fileName));
         }
-        public XDocument loadXdoc(string filename )
+
+        public XDocument loadXdoc(string fileUri, string fileName)
         {
-            return XDocument.Load(filename);
+            return XDocument.Load(fileName);
         }
-
-
     }
 }

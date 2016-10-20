@@ -13,7 +13,7 @@ namespace XMLREADER
         static void Main(string[] args)
         {
             IOEboXMLReader eboxmlread = new EboXMLReader(new Filesaver());
-            eboxmlread.CreateToXMLFailedTests("00subitresults.xml");
+       //     eboxmlread.CreateToXMLFailedTests("00subitresults.xml");
             Console.ReadLine();
 
         }

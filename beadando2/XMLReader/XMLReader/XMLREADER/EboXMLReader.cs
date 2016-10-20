@@ -11,35 +11,27 @@ namespace XMLREADER
     {
         private Filesaver filesaver;
         private static List<EboTest> eboTests;
-        public string filename;
 
         public EboXMLReader(Filesaver filesaver)
         {
             eboTests = new List<EboTest>();
             this.filesaver = filesaver;
-
         }      
        
-        public  void CreateToXMLFailedTests(string filename)
+        public  void CreateToXMLFailedTests(string loadedXmlName, string fileUri, string fileName)
         {
-            LoadEboTestcase(filesaver.loadXdoc(filename));
-            this.filename = filename;
-            CreateXMLPARSERFailedTests();
-          
+            LoadEboTestcase(filesaver.loadXdoc(fileUri,loadedXmlName));
+            CreateXMLPARSERFailedTests(fileUri, fileName);          
         }
-        public void CreateToXMLPassedTests(string filename)
+        public void CreateToXMLPassedTests(string loadedXmlName, string fileUri, string fileName)
         {
-            LoadEboTestcase(filesaver.loadXdoc(filename));
-            this.filename = filename;
-            CreateXMLPARSERPassedTests();
-
+            LoadEboTestcase(filesaver.loadXdoc(fileUri,loadedXmlName));
+            CreateXMLPARSERPassedTests(fileUri, fileName);
         }
-        public void CreateToXMLByIdTests(string filename,string workId)
+        public void CreateToXMLByIdTests(string loadedXmlName,string fileUri, string fileName, string workId)
         {
-            LoadEboTestcase(filesaver.loadXdoc(filename));
-            this.filename = filename;
-            CreateXMLPARSERByIdTests(workId);
-
+            LoadEboTestcase(filesaver.loadXdoc(fileUri,loadedXmlName));
+            CreateXMLPARSERByIdTests(fileUri,fileName, workId);
         }
         private List<EboTest> LoadEboTestcase(XDocument xDoc)
         {
@@ -69,7 +61,7 @@ namespace XMLREADER
             }
             return eboTests;
         }
-        private void CreateXMLPARSERFailedTests()
+        private void CreateXMLPARSERFailedTests(string fileUri, string fileName)
         {
         XDocument xDoc = new XDocument();
         XElement sub = new XElement("subit_result");
@@ -101,11 +93,9 @@ namespace XMLREADER
             }
 
             xDoc.Add(sub);
-            filesaver.XDoc = xDoc;
-            filesaver.setFilename("result" + filename);
-            filesaver.saveXdoc();
+            filesaver.saveXdoc(xDoc, fileUri, fileName);
         }
-        private void CreateXMLPARSERPassedTests()
+        private void CreateXMLPARSERPassedTests(string fileUri, string fileName)
         {
             XDocument xDoc = new XDocument();
             XElement sub = new XElement("subit_result");
@@ -137,11 +127,9 @@ namespace XMLREADER
             }
 
             xDoc.Add(sub);
-            filesaver.XDoc = xDoc;
-            filesaver.setFilename("result" + filename);
-            filesaver.saveXdoc();
+            filesaver.saveXdoc(xDoc,fileUri,fileName);
         }
-        private void CreateXMLPARSERByIdTests(string id)
+        private void CreateXMLPARSERByIdTests(string fileUri, string fileName,string id)
         {
             XDocument xDoc = new XDocument();
             XElement sub = new XElement("subit_result");
@@ -172,10 +160,8 @@ namespace XMLREADER
                 }
             }
 
-            xDoc.Add(sub);
-            filesaver.XDoc = xDoc;
-            filesaver.setFilename("result" + filename);
-            filesaver.saveXdoc();
+            xDoc.Add(sub);          
+            filesaver.saveXdoc(xDoc, fileUri, fileName);
         }
 
 

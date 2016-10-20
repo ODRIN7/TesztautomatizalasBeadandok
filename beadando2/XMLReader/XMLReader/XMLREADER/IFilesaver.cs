@@ -9,8 +9,8 @@ namespace XMLREADER
 {
    public interface IFilesaver
     {
-         void saveXdoc(XDocument xDoc, string fileName);
-         XDocument loadXdoc(string fileName);
+        void saveXdoc(XDocument xDoc, string fileUri, string fileName);
+         XDocument loadXdoc(string fileUri, string fileName);
 
     }
 }
