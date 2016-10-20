@@ -8,8 +8,8 @@ namespace XMLREADER
 {
    public interface IOEboXMLReader
     {
-          void CreateToXMLFailedTests(string filename);
-        void CreateToXMLPassedTests(string filename);
-        void CreateToXMLByIdTests(string filename,string workId);
+        void CreateToXMLFailedTests(string loadedXmlName, string fileUri, string fileName);
+        void CreateToXMLPassedTests(string loadedXmlName, string fileUri, string fileName);
+        void CreateToXMLByIdTests(string loadedXmlName, string fileUri, string fileName, string workId);
     }
 }

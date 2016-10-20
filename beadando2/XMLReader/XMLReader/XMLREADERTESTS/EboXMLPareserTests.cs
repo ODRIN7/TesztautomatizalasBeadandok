@@ -1,5 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
+using System;
 using System.IO;
 using System.Xml.Linq;
 using XMLREADER;
@@ -10,63 +11,70 @@ namespace XMLREADERTESTS
     [TestFixture]
     class EboXMLPareserTests
     {
+        string fileUri;
+        string loadedxmlName;
+        string resultxmlName;
+        string workById;
+        IOEboXMLReader eboXmlReader;
+        IFilesaver mockfilesaver;
+
+      [SetUp]
+        protected void Setup()
+        {
+            fileUri = AppDomain.CurrentDomain.BaseDirectory;
+            loadedxmlName = "odrin7justfortest.xml";
+            resultxmlName = "result_odrin7justfortest.xml";
+            workById = "10.1";
+            mockfilesaver = new MockFileSaver(fileUri, resultxmlName, loadedxmlName);
+            eboXmlReader = new EboXMLReader(mockfilesaver);
+        }
+
+        [TearDown]
+        protected void TearDown()
+        {
+           
+            File.Delete(Path.Combine(fileUri, resultxmlName));
+        }
 
         [Test]
         public void TestEboFileSaved()
-        {
-            string loadedxmlName = "odrin7justfortest.xml";
-            string resultxmlName = "result_odrin7justfortest.xml";
-
-         
-          //  eboxmlReader.CreateToXMLFailedTests(loadedxmlName);
-         //   XDocument xdoc = XDocument.Load(resultxmlName);
-       //         Assert.True(xdoc!=null);
+        {            
+            eboXmlReader.CreateToXMLFailedTests(null,null,null);
+            XDocument xdoc = XDocument.Load(Path.Combine(fileUri,resultxmlName));
+            Assert.True(xdoc!=null);
         }
 
         [Test]
         public void TestAllEboTestPassesTrue()
         {
-            string loadedxmlName = "odrin7justfortest.xml";
-            string resultxmlName = "result_odrin7justfortest.xml";
-            string path = System.IO.Path.GetDirectoryName(
-            System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-
-            Mock<Filesaver> fileSaverMocker = new Mock<Filesaver>();
- //           fileSaverMocker
-  //            .Setup(fsm => fsm.saveXdoc(Path.Combine(path,resultxmlName)));
-            EboXMLReader eboxmlReader = new EboXMLReader(fileSaverMocker.Object);
-       //     eboxmlReader.CreateToXMLFailedTests(loadedxmlName);          
-            XDocument xDoc = XDocument.Load(Path.Combine(path, resultxmlName));
-            Assert.True(allElementPassed(xDoc));
+            eboXmlReader.CreateToXMLPassedTests(null, null, null);
+            XDocument xdoc = XDocument.Load(Path.Combine(fileUri, resultxmlName));
+            Assert.True(allElementPassed(xdoc));
         }
+
         [Test]
         public void TestAllEboTestPassesFalse()
         {
-            string loadedxmlName = "justfortest.xml";
-            Mock<Filesaver> fileSaverMocker = new Mock<Filesaver>();
-          EboXMLReader eboxmlReader = new EboXMLReader(fileSaverMocker.Object);
-
-             XDocument xDoc = XDocument.Load(loadedxmlName);
-            Assert.True(allElementFailed(xDoc));
+            eboXmlReader.CreateToXMLFailedTests(null, null, null);
+            XDocument xdoc = XDocument.Load(Path.Combine(fileUri, resultxmlName));
+            Assert.True(allElementFailed(xdoc));
         }        
+
         [Test]
         public void TestEboTetsWorkByID()
         {
-            string loadedxmlName = "justfortest.xml";
-            Mock<Filesaver> fileSaverMocker = new Mock<Filesaver>();
-              XDocument xDoc = XDocument.Load(loadedxmlName);
-            Assert.True(allElementFailed(xDoc));
+            eboXmlReader.CreateToXMLByIdTests(null, null, null,workById);
+            XDocument xdoc = XDocument.Load(Path.Combine(fileUri, resultxmlName));
+            Assert.True(allellementById(xdoc,workById));
         }
+
         [Test]
         public void TestNewXmlLessSize()
         {
-            string loadedxmlName = "justfortest.xml";
-            string savedxmlName = "Resultjustfortest.xml";
-            Mock<Filesaver> fileSaverMocker = new Mock<Filesaver>();
-
-
-         //   XDocument xDoc2 = XDocument.Load(loadedxmlName);
-         //   Assert.True(lessSizeThenOld(xDoc2, xDoc1));
+            eboXmlReader.CreateToXMLByIdTests(null, null, null, workById);
+            XDocument xdocResult = XDocument.Load(Path.Combine(fileUri, resultxmlName));
+            XDocument xdocLoaded = mockfilesaver.loadXdoc(fileUri, loadedxmlName);
+            Assert.True(lessSizeThenOld(xdocResult, xdocLoaded));
         }
 
 

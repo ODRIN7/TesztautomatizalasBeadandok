@@ -9,10 +9,10 @@ namespace XMLREADER
 {
    public  class EboXMLReader : IOEboXMLReader
     {
-        private Filesaver filesaver;
+        private IFilesaver filesaver;
         private static List<EboTest> eboTests;
 
-        public EboXMLReader(Filesaver filesaver)
+        public EboXMLReader(IFilesaver filesaver)
         {
             eboTests = new List<EboTest>();
             this.filesaver = filesaver;
