@@ -12,17 +12,16 @@ namespace XMLREADER
 
         static void Main(string[] args)
         {
+            Console.WriteLine(">>>>>>go, press enter");
+            Console.ReadLine();
+            string fileUri = AppDomain.CurrentDomain.BaseDirectory;
+            string loadedxmlName = "00subitresults.xml";
+            string resultxmlName = "result00subitresults.xml";
             IOEboXMLReader eboxmlread = new EboXMLReader(new Filesaver());
-       //     eboxmlread.CreateToXMLFailedTests("00subitresults.xml");
+            eboxmlread.CreateToXMLFailedTests(loadedxmlName, fileUri, resultxmlName);
+            Console.WriteLine(">>>>>>File generated, See in the folder");
             Console.ReadLine();
 
         }
-       
-        // mock-->másik fájlt húzzon be 
-        //  >>>>>>>>>>>>>>> csak true
-        //  >>>>>>>>>>>>>>> csak false
-        //  >>>>>>>>>>>>>>> Signalra működik-e 
-        //  >>>>>>>>>>>>>>> Exception helyes
-        // 
     }
 }
