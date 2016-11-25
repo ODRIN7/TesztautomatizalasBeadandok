@@ -46,14 +46,12 @@ namespace WebdriverClass
             Assert.True(wikiResultPage.textContainsTheTitle("Budapest"));
             Assert.True(wikiResultPage.H1Element.Displayed);
 
-            Assert.True(WikiHomePage
-              .OpenSchoolPage(lang, schoolName)
+            Assert.True(wikiResultPage
               .getTableOfContentsWidget()
               .tableOfContent
               .Displayed);
 
-            Assert.True(WikiHomePage
-               .OpenSchoolPage(lang, schoolName)
+            Assert.True(wikiResultPage
                .getInfoBoxWidget()
                .infobox
                .Displayed);
