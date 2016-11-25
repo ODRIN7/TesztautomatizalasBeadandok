@@ -50,10 +50,17 @@ namespace WebdriverClass.PagesAtClass
         {
            return H1Element.Text.Contains(text);
         }
+
         public ReadOnlyCollection<IWebElement> geth2TitlesOfToc()
         {
             ReadOnlyCollection<IWebElement> h2TitlesOfToc = driver.FindElements(By.ClassName("mw-headline"));
             return h2TitlesOfToc;
+        }
+
+        public WikiResultPage setPageSizeMax()
+        {
+            driver.Manage().Window.Maximize();
+            return this;
         }
 
     }

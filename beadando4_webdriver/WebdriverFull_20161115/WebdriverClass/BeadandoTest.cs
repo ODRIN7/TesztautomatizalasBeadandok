@@ -11,60 +11,54 @@ namespace WebdriverClass
 {
     class BeadandoTest : TestBase
     {
-
         [Test, TestCaseSource("testData")]
-        public void TitleChangedTest(string lang, string schoolName, string linkOfCityName)
-        {
-            string title = "";
-            WikiHomePage.OpenSchoolPage(lang, schoolName);
-            title = assertTitleChange(title);
-            Assert.AreEqual(title, Driver.Title);
-        }
-
-        [Test, TestCaseSource("testData")]
-        public void H1TitleTest(string lang, string schoolName, string linkOfCityName)
+        public void EndToEndTest(string lang, string schoolName, string linkOfCityName)
         {         
             WikiResultPage wikiResultPage =
-                WikiHomePage.OpenSchoolPage(lang, schoolName);
+                WikiHomePage.OpenSchoolPage(lang, schoolName)
+                .setPageSizeMax();
+            //1
             Assert.True(wikiResultPage.textContainsTheTitle(schoolName));
-        }
+            Assert.True(wikiResultPage.H1Element.Displayed);
+            //2
+            Assert.True(wikiResultPage
+              .getInfoBoxWidget()
+              .infobox
+              .Displayed);
+            //3
+            Assert.True(wikiResultPage
+                 .getTableOfContentsWidget()
+                 .tableOfContent
+                 .Displayed);
+            //4
+            Assert.True(wikiResultPage
+                .getTableOfContentsWidget()
+                .tableOfContent
+                .Displayed);
+            //5
+            tocAssert(wikiResultPage);
+            //6
+            tocAssert(wikiResultPage);
+            //7
+            wikiResultPage
+                .navigateToCityPage(linkOfCityName)
+                .setPageSizeMax();
+            Assert.True(wikiResultPage.textContainsTheTitle("Budapest"));
+            Assert.True(wikiResultPage.H1Element.Displayed);
 
-        [Test, TestCaseSource("testData")]
-        public void ExistingInfoBoxTest(string lang, string schoolName, string linkOfCityName)
-        {   
-            Assert.IsNotNull(WikiHomePage
-                .OpenSchoolPage(lang, schoolName)
-                .getInfoBoxWidget().infobox);
-        }
+            Assert.True(WikiHomePage
+              .OpenSchoolPage(lang, schoolName)
+              .getTableOfContentsWidget()
+              .tableOfContent
+              .Displayed);
 
-        [Test, TestCaseSource("testData")]
-        public void ExistingTableOfContentTest(string lang, string schoolName, string linkOfCityName)
-        {
-            Assert.IsNotNull(WikiHomePage
-                  .OpenSchoolPage(lang, schoolName)
-                  .getTableOfContentsWidget().tableOfContent);
-        }
-
-        [Test, TestCaseSource("testData")]
-        public void CheckTableOfContentLinksTest(string lang, string schoolName, string linkOfCityName)
-        {
-            WikiResultPage obudaiPage = WikiHomePage
-                .OpenSchoolPage(lang, schoolName);
-
-            tocAssert(obudaiPage);
-        }
-
-        [Test, TestCaseSource("testData")]
-        public void CheckBudapestLinksTest(string lang, string schoolName, string linkOfCityName)
-        {
-
-            WikiResultPage budapestPage = WikiHomePage
-                .OpenSchoolPage(lang, schoolName)
-                .navigateToCityPage(linkOfCityName);
-
-            tocAssert(budapestPage);
-          
-        }
+            Assert.True(WikiHomePage
+               .OpenSchoolPage(lang, schoolName)
+               .getInfoBoxWidget()
+               .infobox
+               .Displayed);
+            tocAssert(wikiResultPage);
+        }     
         
         private void tocAssert(WikiResultPage obudaiPage)
         {
@@ -72,16 +66,10 @@ namespace WebdriverClass
             {
                 var tocElement = obudaiPage.getTableOfContentsWidget().getTocTitleElement(item);
                 tocElement.Click();
-                CollectionAssert.IsNotEmpty(obudaiPage.geth2TitlesOfToc().Select(s => s.Text.Equals(tocElement.Text)));
+                CollectionAssert.IsNotEmpty(obudaiPage.geth2TitlesOfToc().Select(s => s.Text.Equals(tocElement.Text) && s.Displayed));
+
             }
 
-        }
-
-        private String assertTitleChange(String oldTitle)
-        {
-            String newTitle = Driver.Title;
-            Assert.AreNotEqual(oldTitle, newTitle);
-            return newTitle;
         }
 
         static IEnumerable testData()

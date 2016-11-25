@@ -11,7 +11,7 @@ namespace WebdriverClass.Widgets
 {
     class InfoBoxWidget : BasePage
     {
-        [FindsBy(How = How.Id, Using = "infobox")]
+        [FindsBy(How = How.ClassName, Using = "infobox")]
         public IWebElement infobox { get; set; }
 
         public InfoBoxWidget(IWebDriver driver) : base(driver)

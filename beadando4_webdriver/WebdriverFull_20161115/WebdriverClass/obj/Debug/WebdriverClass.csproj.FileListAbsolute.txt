@@ -56,3 +56,17 @@ C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\WebdriverFull_20161115\Webdri
 C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\WebdriverFull_20161115\WebdriverFull_20161115\WebdriverClass\obj\Debug\WebdriverClass.dll
 C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\WebdriverFull_20161115\WebdriverFull_20161115\WebdriverClass\obj\Debug\WebdriverClass.pdb
 C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\WebdriverFull_20161115\WebdriverFull_20161115\WebdriverClass\obj\Debug\WebdriverClass.csprojResolveAssemblyReference.cache
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\geckodriver.exe
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\data.xml
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\WebdriverClass.dll.config
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\WebdriverClass.dll
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\WebdriverClass.pdb
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\nunit.framework.dll
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\WebDriver.dll
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\WebDriver.Support.dll
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\nunit.framework.xml
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\WebDriver.xml
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\bin\Debug\WebDriver.Support.xml
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\obj\Debug\WebdriverClass.csprojResolveAssemblyReference.cache
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\obj\Debug\WebdriverClass.dll
+C:\Dani\Suli\Tárgyak\07_félév\tesztautomat_EPAM\TesztautomatizalasBeadandok\beadando4_webdriver\WebdriverFull_20161115\WebdriverClass\obj\Debug\WebdriverClass.pdb
